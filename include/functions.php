@@ -81,15 +81,19 @@ function mbstring_binary_safe_encoding($reset = false)
 		mb_internal_encoding($encoding);
 	}
 }
-function absint( $maybeint ) {
-	return abs( intval( $maybeint ) );
+
+function absint($maybeint)
+{
+	return abs(intval($maybeint));
 }
-function get_status_header_desc( $code ) {
+
+function get_status_header_desc($code)
+{
 	global $wp_header_to_desc;
 
-	$code = absint( $code );
+	$code = absint($code);
 
-	if ( !isset( $wp_header_to_desc ) ) {
+	if (!isset($wp_header_to_desc)) {
 		$wp_header_to_desc = array(
 			100 => 'Continue',
 			101 => 'Switching Protocols',
@@ -154,11 +158,13 @@ function get_status_header_desc( $code ) {
 		);
 	}
 
-	if ( isset( $wp_header_to_desc[$code] ) )
+	if (isset($wp_header_to_desc[$code]))
 		return $wp_header_to_desc[$code];
 	else
 		return '';
 }
-function reset_mbstring_encoding() {
-	mbstring_binary_safe_encoding( true );
+
+function reset_mbstring_encoding()
+{
+	mbstring_binary_safe_encoding(true);
 }

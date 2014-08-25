@@ -197,7 +197,7 @@ class WP_Http
 		if ($r['stream']) {
 			$r['blocking'] = true;
 			if (!wp_is_writable(dirname($r['filename'])))
-				return new WP_Error('http_request_failed', __('Destination directory for file streaming does not exist or is not writable.'));
+				return "Error: " . __('Destination directory for file streaming does not exist or is not writable.');
 		}
 
 		if (is_null($r['headers']))
@@ -328,7 +328,7 @@ class WP_Http
 
 		$class = $this->_get_first_available_transport($args, $url);
 		if (!$class)
-			return new WP_Error('http_failure', __('There are no HTTP transports available which can complete the requested request.'));
+			return "Error: " . __('There are no HTTP transports available which can complete the requested request.');
 
 		// Transport claims to support request, instantiate it and give it a whirl.
 		if (empty($transports[$class]))
@@ -1381,15 +1381,15 @@ class WP_Http_Curl
 		if ($curl_error || (0 == strlen($theBody) && empty($theHeaders['headers']))) {
 			if (CURLE_WRITE_ERROR /* 23 */ == $curl_error && $r['stream']) {
 				fclose($this->stream_handle);
-				return new WP_Error('http_request_failed', __('Failed to write request to temporary file.'));
+				return "Error: " . __('Failed to write request to temporary file.');
 			}
 			if ($curl_error = curl_error($handle)) {
 				curl_close($handle);
-				return new WP_Error('http_request_failed', $curl_error);
+				return "Error: " . $curl_error;
 			}
 			if (in_array(curl_getinfo($handle, CURLINFO_HTTP_CODE), array(301, 302))) {
 				curl_close($handle);
-				return new WP_Error('http_request_failed', __('Too many redirects.'));
+				return "Error: " . __('Too many redirects.');
 			}
 		}
 
