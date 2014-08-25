@@ -82,7 +82,7 @@ if ($_POST['submit']) {
 		<!-- subscribe end -->
 
 		<footer class="social">
-			<h1>Sharing is sexy!</h1>
+			<h1>Sharing is FREE!</h1>
 			<p style="margin-bottom: 0px;">˅˅˅˅˅˅˅˅</p>
 			<div class="fb-like" data-href="http://ping.mucas.info/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 			<p style="margin-bottom: 0px;">&</p>
