@@ -37,17 +37,15 @@ Class Ping
 		$home = trailingslashit($this->getInfo('url'));
 		if (!$client->query('weblogUpdates.extendedPing', $this->getInfo('blogname'), $home, $this->getInfo('rss2_url'))) // then try a normal ping
 			$client->query('weblogUpdates.ping', $this->getInfo('blogname'), $home);
-		var_dump($client->response());
-
 	}
 
 
 }
-
+/*
 $ping = new Ping();
 $ping->setInfo('url', "http://matrixcyber.org")
 	->setInfo('blogname', 'test ping!')
 	->setInfo('rss2_url', 'http://matrixcyber.org/feed/');
 foreach ($pingServers AS $pingServer) {
 	$ping->ping($pingServer);
-}
+}*/
