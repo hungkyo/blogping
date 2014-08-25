@@ -1,0 +1,4 @@
+blogping
+========
+
+ping XMLRPC services.
