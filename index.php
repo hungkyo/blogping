@@ -33,7 +33,7 @@ if ($_POST['submit']) {
 	      content="Get your wordpress indexed fast with our free ping service. Ping over 100 web directories for free!">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 
-	<link rel="icon" type="image/png" href="/launchy/slideshow/img/favicon.png">
+	<link rel="icon" type="image/png" href="skin/images/favicon.ico">
 
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,700,300italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="skin/css/font-awesome.min.css">
@@ -82,8 +82,8 @@ if ($_POST['submit']) {
 		<!-- subscribe end -->
 
 		<footer class="social">
-			<h2>Sharing is sexy!</h2>
-			<p></p>
+			<h1>Sharing is sexy!</h1>
+			<p style="margin-bottom: 0px;">˅˅˅˅˅˅˅˅</p>
 			<div class="fb-like" data-href="http://ping.mucas.info/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 			<p style="margin-bottom: 0px;">&</p>
 			<div class="g-plusone" data-annotation="inline" data-width="150"></div>
